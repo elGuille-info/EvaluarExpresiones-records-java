@@ -83,7 +83,7 @@ public final class Evaluar {
         char signo;
         int resultado = 0;
 
-        do{
+        do {
             // Buscar la operación a realizar.
             signo = buscarSiguienteSigno(expresion);
             // Si no hay más operaciones, salir.
