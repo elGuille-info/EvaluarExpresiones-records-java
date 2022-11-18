@@ -166,12 +166,7 @@ public final class Evaluar {
             var laOperacion = op1 + donde.operador + op2;
             var elResultado = String.valueOf(resultado);
 
-            // Cambiar por el resultado todas las operaciones como la que se ha realizado.
-            // Esto fallará si la operación está en otra parte de la expresión y contiene otros dígitos:
-            //  Si la operación es: 2*5 y está también 22*5 o 2*51, etc.
-            //expresion = expresion.replace(laOperacion, elResultado);
-            //
-            // Mejor solo cambiar esta expresión. (18/nov/22 00.20)
+            // Cambiar por el resultado esta expresión. (18/nov/22 00.20)
 
             // La posición donde está esta operación (si hay más de una solo se busca la primera).
             var posOp = expresion.indexOf(laOperacion);
@@ -228,13 +223,6 @@ public final class Evaluar {
                 return new TuplePair<>(op, pos);
             }
         }
-        // El IDE dice que el for anterior es "enhanced" comparado con este:
-//        for (int i = 0; i < operadores.length; i++) {
-//            int pos = expresion.indexOf(operadores[i]);
-//            if (pos > -1) {
-//                return new TuplePair<>(operadores[i], pos);
-//            }
-//        }
 
         return new TuplePair<>('\u0000', -1);
     }
