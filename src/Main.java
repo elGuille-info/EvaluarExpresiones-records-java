@@ -11,35 +11,53 @@ public class Main {
         System.out.println();
 
         String expresion;
-        int res;
 
+        // Esto se calculará mal. (17/nov/22 19.14)
+        // 1+2*5+3+4+22*5
+        // ya que al evaluar 2*5 = 10, se convertirá el 22*5 en 210
+        //  Lo utiliza como 1+10+3+4+210 = 218
+        expresion = "1+2*5+3+4+22*5";
+        mostrarResultado(expresion);
+
+        // No hay paréntesis de apertura, a ver cómo lo gestiona. (17/nov/22 13.59)
+        //  OK: Lo ignora y muestra el error.
+        //  Lo utiliza como 1+2*5+3+4 = 18
+        expresion = "1+2)*5+3+4";
+        mostrarResultado(expresion);
+
+        // Con paréntesis de apertura sin el de cierre. (17/nov/22 15.50)
+        //  Lo utiliza como 1+2*5+3+4 = 18
+        expresion = "(1+2*5+3+4";
+        mostrarResultado(expresion);
+
+        // Los paréntesis no están emparejados: falta el de cierre.
+        //  OK: Lo ignora y muestra el error.
+        //  Lo utiliza como (1+2)*(5+3+4) = 36
         expresion = "((1+2)*(5+3+4)";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "(1+2)*5+3+4";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "((1+2)*5+3+4)";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "(1+2)*(5+3)+4";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "1+2*5+3+4";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "1 + 2 + 3 + 4*5";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
 
         expresion = "2*5 + 3*2 + 3 + 4*5 + 3*2";
-        res = Evaluar.evalua(expresion);
-        System.out.println(expresion + " = " + res);
+        mostrarResultado(expresion);
+    }
 
+    private static void mostrarResultado(String expresión) {
+        System.out.print(expresión + " = ");
+        var res = Evaluar.evalua(expresión);
+        System.out.println(res);
     }
 }
