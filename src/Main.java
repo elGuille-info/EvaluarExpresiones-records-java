@@ -1,5 +1,6 @@
 // EvaluarExpresiones.  (16/nov/22 15.12)
 // Evaluador de expresiones simples a partir del contenido de una cadena.
+//
 // Basado en el código de ejemplo de Prueba08 con sealed interface y records.
 
 //package com.example.evaluar;
