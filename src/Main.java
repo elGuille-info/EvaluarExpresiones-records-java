@@ -5,16 +5,16 @@
 //package com.example.evaluar;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        System.out.println("Evaluar expresiones simples.");
+        System.out.println("Evaluar expresiones simples de números enteros.");
         System.out.println();
 
         String expresion;
 
-        // Esto se calculará mal. (17/nov/22 19.14)
+        // Esto se calculaba mal. (17/nov/22 19.14)
         // 1+2*5+3+4+22*5
-        // ya que al evaluar 2*5 = 10, se convertirá el 22*5 en 210
+        // ya que al evaluar 2*5 = 10, se convertía el 22*5 en 210
         //  Lo utiliza como 1+10+3+4+210 = 218
         expresion = "1+2*5+3+4+22*5";
         mostrarResultado(expresion);
@@ -55,9 +55,14 @@ public class Main {
         mostrarResultado(expresion);
     }
 
-    private static void mostrarResultado(String expresión) {
-        System.out.print(expresión + " = ");
-        var res = Evaluar.evalua(expresión);
+    private static void mostrarResultado(String expresion) {
+        System.out.print(expresion + " = ");
+        long startTime = System.nanoTime();
+        //long iniTime = System.currentTimeMillis();
+        var res = Evaluar.evalua(expresion);
         System.out.println(res);
+        long elapsedTime = System.nanoTime() - startTime;
+        //long elapsedTime = System.currentTimeMillis() - iniTime;
+        System.out.printf("  Tiempo empleado: %,.2f ns/1.000\n", (elapsedTime / 1000.0));
     }
 }
