@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EvaluarExpresiones.iml" filepath="$PROJECT_DIR$/EvaluarExpresiones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EvaluarExpresiones-records.iml" filepath="$PROJECT_DIR$/EvaluarExpresiones-records.iml" />
     </modules>
   </component>
 </project>
