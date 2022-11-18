@@ -12,6 +12,9 @@ Esas implementaciones están basadas en el código de ejemplo de la documentaci�
 > **Nota:** 
 >
 > Este proyecto puede que no lo actualice más. Crearé uno que use los operadores normales en lugar de hacer las operaciones con records.
+>
+> Puedes ver el nuevo proyecto para evaluar expresiones usando el tipo **double** en vez de records, pudiendo operar con números con decimales (aunque sin exponienciación científica, aunque no lo he probado): [EvaluarExpresiones-java](https://github.com/elGuille-info/EvaluarExpresiones-java)
+>
 <br>
 
 
